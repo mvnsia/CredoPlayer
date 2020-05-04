@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mymediaplayer.FXMLDocumentController">
+   
+   <top>
+   
+   <MenuBar>
+   
+   <Menu fx:id="openButton" text="      Main Menu  --v">
+        
+       <Menu text="create playlist" mnemonicParsing="false" onAction="#Cplaylist">
+       
+       </Menu>
+       <MenuItem text="Add to playlist" mnemonicParsing="false" onAction="#Aplaylist"></MenuItem>
+       <MenuItem text="open playlist"  mnemonicParsing="false" onAction="#handleButtonAction"></MenuItem>
+       <MenuItem text="exit window" mnemonicParsing="false" onAction="#exitVideo"></MenuItem>
+        
+     </Menu>
+    
+    </MenuBar>
+    
+    
+   </top>
+    
+   <bottom>
+      
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                                     
+                  <Button fx:id="loopButton" mnemonicParsing="false" onAction="#loopVideo" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                     
+                  <Button fx:id="openFile" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css" text="Open">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="playButton" mnemonicParsing="false" onAction="#playVideo" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseVideo" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="stopButton" mnemonicParsing="false" onAction="#stopVideo" prefHeight="20.0" prefWidth="20.0" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                   
+                   
+                     
+                  <Button mnemonicParsing="false" onAction="#slowerVideo" stylesheets="@style.css" text="&lt;&lt;&lt;" />
+                  <Button mnemonicParsing="false" onAction="#slowVideo" stylesheets="@style.css" text="&lt;&lt;" />
+                  <Button mnemonicParsing="false" onAction="#fastVideo" stylesheets="@style.css" text="&gt;&gt;" />
+                  <Button mnemonicParsing="false" onAction="#fasterVideo" stylesheets="@style.css" text="&gt;&gt;&gt;" />
+                  <Button mnemonicParsing="false" onAction="#exitVideo" stylesheets="@style.css" text="Exit">
+                  
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Button>
+                  <Slider fx:id="slider">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Slider>
+                  
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <StackPane prefHeight="353.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+            <Slider fx:id="seekSlider" StackPane.alignment="BOTTOM_CENTER" />
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
